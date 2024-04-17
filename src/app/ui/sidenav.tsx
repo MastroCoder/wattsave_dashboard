@@ -4,24 +4,33 @@ import {
   WalletIcon,
   ChartBarSquareIcon,
 } from "@heroicons/react/24/outline";
+import { inter, interBold } from "./fonts";
 
 export default function SideNav() {
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
-      <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-blue-600 p-4 md:h-40"
-        href="/"
+    <div className="flex h-full flex-col px-3 py-4 md:px-2 bg-stone-900 rounded-tr-3xl space-y-5">
+      <h1
+        className={`${interBold.className} text-4xl text-slate-100 my-8 mx-auto`}
       >
+        Watt<span className="text-green-700">Saver</span>
+      </h1>
+      <Link href="/dashboard" className="flex gap-2 justify-center">
+        <ChartBarSquareIcon className="w-10 fill-slate-100" />
+        <h3 className={`${inter.className} text-slate-100 text-2xl`}>
+          Dashboard
+        </h3>
       </Link>
-      <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-        <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
-        <form>
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
-            <PowerIcon className="w-6" />
-            <div className="hidden md:block">Sign Out</div>
-          </button>
-        </form>
-      </div>
+      <Link href="/dashboard/wallet" className="flex gap-2 justify-center">
+        <WalletIcon className="w-10 fill-slate-100" />
+        <h3 className={`${inter.className} text-slate-100 text-2xl`}>
+          Carteira
+        </h3>
+      </Link>
+      <div className="hidden h-auto w-full grow bg-stone-900 md:block"></div>
+      <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md text-slate-100 bg-stone-900 p-3 text-sm font-medium hover:bg-gray-600 hover:text-green-600 md:flex-none md:justify-start md:p-2 md:px-3">
+        <PowerIcon className="w-6" />
+        <div className="hidden md:block">Sign Out</div>
+      </button>
     </div>
   );
 }

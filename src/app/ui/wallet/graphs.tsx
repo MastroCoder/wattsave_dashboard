@@ -236,7 +236,7 @@ export const DashboardBumpGraph = ({data}:{data:any}) => (
 export const DashboardPieGraph = ({data}: {data: any}) => (
     <ResponsivePie
         data={data}
-        margin={{ top: 20, right: 80, bottom: 35, left: 30 }}
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -337,13 +337,13 @@ export const DashboardPieGraph = ({data}: {data: any}) => (
         ]}
         legends={[
             {
-                anchor: 'right',
-                direction: 'column',
+                anchor: 'bottom',
+                direction: 'row',
                 justify: false,
-                translateX: 70,
-                translateY: 30,
-                itemsSpacing: 5,
-                itemWidth: 60,
+                translateX: 0,
+                translateY: 56,
+                itemsSpacing: 0,
+                itemWidth: 100,
                 itemHeight: 18,
                 itemTextColor: '#999',
                 itemDirection: 'left-to-right',
