@@ -5,6 +5,8 @@ import {
   ChartBarSquareIcon,
 } from "@heroicons/react/24/outline";
 import { inter, interBold } from "./fonts";
+import { signOut } from "@/auth";
+import { normalize } from "node:path/win32";
 
 export default function SideNav() {
   return (
@@ -27,10 +29,17 @@ export default function SideNav() {
         </h3>
       </Link>
       <div className="hidden h-auto w-full grow bg-stone-900 md:block"></div>
-      <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md text-slate-100 bg-stone-900 p-3 text-sm font-medium hover:bg-gray-600 hover:text-green-600 md:flex-none md:justify-start md:p-2 md:px-3">
-        <PowerIcon className="w-6" />
-        <div className="hidden md:block">Sign Out</div>
-      </button>
+      <form
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
+      >
+        <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md text-slate-100 bg-stone-900 p-3 text-sm font-medium hover:bg-gray-600 hover:text-green-600 md:flex-none md:justify-start md:p-2 md:px-3">
+          <PowerIcon className="w-6" />
+          <div className="hidden md:block">Sign Out</div>
+        </button>
+      </form>
     </div>
   );
 }
