@@ -10,12 +10,12 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 import { useFormState, useFormStatus } from "react-dom";
-import { authenticate } from "@/app/lib/actions";
+//import { authenticate } from "@/app/lib/actions";
 
 export default function LoginForm() {
-  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  //const [errorMessage, dispatch] = useFormState(authenticate, undefined);action={dispatch}
   return (
-    <form action={dispatch} className="space-y-3 md:w-4/5 mx-auto  rounded-lg">
+    <form className="space-y-3 md:w-4/5 mx-auto  rounded-lg">
       <div className="flex-1 rounded-lg bg-stone-900 px-6 pb-4 pt-8  ">
         <h1 className={`${inter.className} mb-3 text-2xl text-slate-100`}>
           Login
@@ -70,7 +70,7 @@ export default function LoginForm() {
             </p>
           </div>
           <LoginButton />
-          <div
+          {/*<div
             className="flex h-8 items-end space-x-1"
             aria-live="polite"
             aria-atomic="true"
@@ -81,7 +81,7 @@ export default function LoginForm() {
                 <p className="text-sm text-red-500">{errorMessage}</p>
               </>
             )}
-          </div>
+          </div>*/}
         </div>
       </div>
     </form>

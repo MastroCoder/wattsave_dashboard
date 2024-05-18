@@ -5,7 +5,7 @@ import {
   ChartBarSquareIcon,
 } from "@heroicons/react/24/outline";
 import { inter, interBold } from "./fonts";
-import { signOut } from "@/auth";
+//import { signOut } from "@/auth";
 import { normalize } from "node:path/win32";
 
 export default function SideNav() {
@@ -29,7 +29,7 @@ export default function SideNav() {
         </h3>
       </Link>
       <div className="hidden h-auto w-full grow bg-stone-900 md:block"></div>
-      <form
+      {/*<form
         action={async () => {
           "use server";
           await signOut();
@@ -39,7 +39,7 @@ export default function SideNav() {
           <PowerIcon className="w-6" />
           <div className="hidden md:block">Sign Out</div>
         </button>
-      </form>
+      </form>*/}
     </div>
   );
 }
