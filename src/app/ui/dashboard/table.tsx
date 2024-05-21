@@ -1,4 +1,13 @@
-export default function Table() {
+import {
+  fetchDevices,
+  fetchOutletById,
+  fetchOutlets,
+  fetchRooms,
+  fetchWalletTable,
+} from "@/app/lib/fetcher";
+
+export default async function Table() {
+  const tableData = await fetchWalletTable();
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
@@ -7,45 +16,25 @@ export default function Table() {
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Nome
+                  Dispositivo
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Valor gasto
+                  Consumo
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Data
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Pessoa
+                  Cômodo
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white">
-              <tr>
-                <td>Geladeira</td>
-                <td>-13.00</td>
-                <td>12/04</td>
-                <td>Pai</td>
-              </tr>
-              <tr>
-                <td>Geladeira</td>
-                <td>-13.00</td>
-                <td>12/04</td>
-                <td>Pai</td>
-              </tr>
-              <tr>
-                <td>Geladeira</td>
-                <td>-13.00</td>
-                <td>12/04</td>
-                <td>Pai</td>
-              </tr>
-              <tr>
-                <td>Geladeira</td>
-                <td>-13.00</td>
-                <td>12/04</td>
-                <td>Pai</td>
-              </tr>
-            </tbody>
+            {tableData?.map((data) => (
+              <tbody className="bg-white" key={data.name}>
+                <tr>
+                  <td>{data.device}</td>
+                  <td>{data.kwh}</td>
+                  <td>{data.name}</td>
+                </tr>
+              </tbody>
+            ))}
           </table>
         </div>
       </div>

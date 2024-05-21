@@ -89,10 +89,11 @@ export default function LoginForm() {
 }
 
 function LoginButton() {
-  const { pending } = useFormStatus();
   return (
-    <Button className="mt-4 w-full" aria-disabled={pending}>
-      Entrar <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
+    <Link href="/dashboard">
+      <Button className="mt-4 w-full">
+        Entrar <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+      </Button>
+    </Link>
   );
 }

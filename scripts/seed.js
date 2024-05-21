@@ -1,9 +1,6 @@
 const { db } = require('@vercel/postgres');
 
-const { users } = require('../src/app/lib/user-data.ts');
-const { outlets } = require('../src/app/lib/outlet-data.ts');
-const { rooms } = require('../src/app/lib/room-data.ts');
-const { devices } = require('../src/app/lib/device-data.ts')
+const { users, outlets, rooms, devices } = require('../src/app/lib/data.ts');
 
 const bcrypt = require('bcrypt');
 
@@ -16,6 +13,7 @@ async function seedUsers(client) {
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email TEXT NOT NULL UNIQUE,
+        goal FLOAT NOT NULL,
         password TEXT NOT NULL
       );
     `;
@@ -27,8 +25,8 @@ async function seedUsers(client) {
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
         return client.sql`
-        INSERT INTO users (id, name, email, password)
-        VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
+        INSERT INTO users (id, name, email, goal, password)
+        VALUES (${user.id}, ${user.name}, ${user.email}, ${user.goal} ,${hashedPassword})
         ON CONFLICT (id) DO NOTHING;
       `;
       }),
@@ -89,7 +87,8 @@ async function seedRooms(client){
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS rooms (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL
+        name VARCHAR(255) NOT NULL,
+        device_id UUID
       );
     `;
 
@@ -99,8 +98,8 @@ async function seedRooms(client){
     const insertedRooms = await Promise.all(
       rooms.map(async (room) => {
         return client.sql`
-        INSERT INTO rooms (id, name)
-        VALUES (${room.id}, ${room.name})
+        INSERT INTO rooms (id, name, device_id)
+        VALUES (${room.id}, ${room.name}, ${room.device_id})
         ON CONFLICT (id) DO NOTHING;
       `;
       }),
@@ -125,7 +124,8 @@ async function seedDevices(client){
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS devices (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL
+        device VARCHAR(255) NOT NULL,
+        outlet_id UUID NOT NULL
       );
     `;
 
@@ -135,8 +135,8 @@ async function seedDevices(client){
     const insertedDevices = await Promise.all(
       devices.map(async (device) => {
         return client.sql`
-        INSERT INTO devices (id, name)
-        VALUES (${device.id}, ${device.name})
+        INSERT INTO devices (id, device, outlet_id)
+        VALUES (${device.id}, ${device.device}, ${device.outlet_id})
         ON CONFLICT (id) DO NOTHING;
       `;
       }),
