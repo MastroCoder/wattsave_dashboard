@@ -2,10 +2,6 @@ export const lineGraphData = [
     {
       data: [
         {
-          x: 0,
-          y: 0.7
-        },
-        {
           x: 1,
           y: 0.9
         },
@@ -53,28 +49,8 @@ export const lineGraphData = [
           x: 12,
           y: 0.4
         },
-        {
-          x: 13,
-          y: 0.6
-        },
-        {
-          x: 14,
-          y: 0.5
-        },
-        {
-          x: 15,
-          y: 0.3
-        },
-        {
-          x: 16,
-          y: 0.4
-        },
-        {
-          x: 17,
-          y: 0
-        }
       ],
-      id: 'positive :)'
+      id: 'Positivo'
     },
     {
       data: [
@@ -110,43 +86,7 @@ export const lineGraphData = [
           x: 12,
           y: null
         },
-        {
-          x: 13,
-          y: null
-        },
-        {
-          x: 14,
-          y: null
-        },
-        {
-          x: 15,
-          y: null
-        },
-        {
-          x: 16,
-          y: null
-        },
-        {
-          x: 17,
-          y: 0
-        },
-        {
-          x: 18,
-          y: -0.4
-        },
-        {
-          x: 19,
-          y: -0.2
-        },
-        {
-          x: 20,
-          y: -0.1
-        },
-        {
-          x: 21,
-          y: -0.6
-        }
       ],
-      id: 'negative :('
+      id: 'Negativo'
     }
   ]

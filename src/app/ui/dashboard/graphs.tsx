@@ -24,7 +24,7 @@ export const DashboardLineGraph = ({ data }: {data: any}) => (
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'transportation',
+            legend: 'Meses',
             legendOffset: 36,
             legendPosition: 'middle',
             truncateTickAt: 0
@@ -33,7 +33,7 @@ export const DashboardLineGraph = ({ data }: {data: any}) => (
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'count',
+            legend: '',
             legendOffset: -40,
             legendPosition: 'middle',
             truncateTickAt: 0
@@ -48,6 +48,7 @@ export const DashboardLineGraph = ({ data }: {data: any}) => (
             ]
           }}
         pointSize={10}
+        colors={{ scheme: 'paired' }}
         pointColor={{ theme: 'background' }}
         pointBorderWidth={2}
         pointLabelYOffset={-12}
@@ -189,7 +190,7 @@ export const DashboardStreamGraph = ({ data }: {data: any}) => (
 export const DashboardBumpGraph = ({data}:{data:any}) => (
     <ResponsiveBump
         data={data}
-        colors={{ scheme: 'spectral' }}
+        colors={{ scheme: 'paired' }}
         lineWidth={3}
         activeLineWidth={6}
         inactiveLineWidth={3}
@@ -242,6 +243,7 @@ export const DashboardPieGraph = ({data}: {data: any}) => (
         cornerRadius={3}
         activeOuterRadiusOffset={8}
         borderWidth={1}
+        colors={{ scheme: 'paired' }}
         borderColor={{
             from: 'color',
             modifiers: [
@@ -288,52 +290,16 @@ export const DashboardPieGraph = ({data}: {data: any}) => (
         fill={[
             {
                 match: {
-                    id: 'ruby'
+                    id: 'user1'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'c'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'go'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'python'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'scala'
+                    id: 'user2'
                 },
                 id: 'lines'
             },
-            {
-                match: {
-                    id: 'lisp'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'elixir'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'javascript'
-                },
-                id: 'lines'
-            }
         ]}
         legends={[
             {
@@ -372,7 +338,7 @@ export const DashboardWaffleGraph = ({data}: {data: any}) => (
         padding={1}
         valueFormat=".2f"
         margin={{ top: 10, right: 10, bottom: 10, left: 120 }}
-        colors={{ scheme: 'nivo' }}
+        colors={{ scheme: 'paired' }}
         borderRadius={3}
         borderColor={{
             from: 'color',
@@ -418,7 +384,7 @@ export const DashboardCalendarGraph = ({ data }: {data: any}) => (
         from="2015-03-01"
         to="2015-07-12"
         emptyColor="#eeeeee"
-        colors={[ '#61cdbb', '#97e3d5', '#e8c1a0', '#f47560' ]}
+        colors={['rgb(0, 104, 55)','rgb(166, 217, 106)', 'rgb(253, 174, 97)', 'rgb(165, 0, 38)']}
         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
         yearSpacing={40}
         monthBorderColor="#ffffff"

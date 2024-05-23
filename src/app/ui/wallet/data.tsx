@@ -18,8 +18,8 @@ export default async function Data() {
   let diff = value - user.goal;
   return (
     <div className={`${interBold.className}`}>
-      <h2 className="text-4xl">
-        O seu consumo está em{" "}
+      <h3 className="text-3xl">
+        Consumo:{" "}
         <span
           className={
             value - avgConsumption > 0 ? "text-red-700" : "text-green-700"
@@ -28,9 +28,10 @@ export default async function Data() {
           {sum}
         </span>{" "}
         kWh.
-      </h2>
-      <h3>
-        O valor esperado para a sua conta de luz é <span className={
+      </h3>
+      <p>Seu consumo está melhor que a média brasileira para 2023.</p>
+      <h3 className="text-3xl">
+        Valor esperado:{" "}<span className={
             diff > 0 ? "text-red-700" : "text-green-700"
         }>R$ {value}</span>
       </h3>
