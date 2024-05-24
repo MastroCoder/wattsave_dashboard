@@ -21,10 +21,9 @@ export default async function Page() {
       <div className="flex w-full">
         <Card>
           <Table />
+          <br />
+          <Data />
         </Card>
-      </div>
-      <div className="flex w-full">
-        <Data />
       </div>
       <div className="flex w-full">
         <Card>

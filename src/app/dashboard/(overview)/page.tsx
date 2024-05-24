@@ -36,7 +36,7 @@ export default function Page() {
       </div>
       <div className="flex w-full">
         <Card>
-          <h3>Por categoria</h3>
+          <h3>Por dispositivo</h3>
           <DashboardBumpGraph data={bumpGraphData} />
         </Card>
         <Card>

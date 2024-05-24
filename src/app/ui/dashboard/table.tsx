@@ -30,7 +30,7 @@ export default async function Table() {
               <tbody className="bg-white" key={data.name}>
                 <tr>
                   <td>{data.device}</td>
-                  <td>{data.kwh}</td>
+                  <td>{data.kwh}{' '}kWh</td>
                   <td>{data.name}</td>
                 </tr>
               </tbody>

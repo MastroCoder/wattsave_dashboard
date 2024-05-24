@@ -3,23 +3,23 @@ export const bumpGraphData = [
     "id": "Ventilador",
     "data": [
       {
-        "x": 2000,
+        "x": "Jan",
         "y": 4
       },
       {
-        "x": 2001,
+        "x": "Fev",
         "y": 3
       },
       {
-        "x": 2002,
+        "x": "Mar",
         "y": 2
       },
       {
-        "x": 2003,
+        "x": "Abr",
         "y": 1
       },
       {
-        "x": 2004,
+        "x": "Mai",
         "y": 2
       }
     ]
@@ -28,23 +28,23 @@ export const bumpGraphData = [
     "id": "Televisão",
     "data": [
       {
-        "x": 2000,
+        "x": "Jan",
         "y": 3
       },
       {
-        "x": 2001,
+        "x": "Fev",
         "y": 3
       },
       {
-        "x": 2002,
+        "x": "Mar",
         "y": 3
       },
       {
-        "x": 2003,
+        "x": "Abr",
         "y": 1
       },
       {
-        "x": 2004,
+        "x": "Mai",
         "y": 3
       }
     ]
@@ -53,23 +53,23 @@ export const bumpGraphData = [
     "id": "Playstation 5",
     "data": [
       {
-        "x": 2000,
+        "x": "Jan",
         "y": 1
       },
       {
-        "x": 2001,
+        "x": "Fev",
         "y": 2
       },
       {
-        "x": 2002,
+        "x": "Mar",
         "y": 3
       },
       {
-        "x": 2003,
+        "x": "Abr",
         "y": 4
       },
       {
-        "x": 2004,
+        "x": "Mai",
         "y": 4
       }
     ]
@@ -78,23 +78,23 @@ export const bumpGraphData = [
     "id": "Microondas",
     "data": [
       {
-        "x": 2000,
+        "x": "Jan",
         "y": 1
       },
       {
-        "x": 2001,
+        "x": "Fev",
         "y": 2
       },
       {
-        "x": 2002,
+        "x": "Mar",
         "y": 1
       },
       {
-        "x": 2003,
+        "x": "Abr",
         "y": 1
       },
       {
-        "x": 2004,
+        "x": "Mai",
         "y": 1
       }
     ]
